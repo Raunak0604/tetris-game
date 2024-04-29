@@ -1,1 +1,33 @@
+# tetris-deployment.yaml
 
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: tetris-rollout
+spec:
+  replicas: 6 # You can adjust the number of replicas as needed
+  strategy:
+    canary:
+      steps:
+      - setWeight: 20
+      - pause: {}
+      - setWeight: 40
+      - pause: {duration: 10}
+      - setWeight: 60
+      - pause: {duration: 10}
+      - setWeight: 80
+      - pause: {duration: 10}
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: tetris
+  # template:
+  #   metadata:
+  #     labels:
+  #       app: tetris
+  #   spec:
+  #     containers:
+  #       - name: tetris
+  #         image: rabbit0604/app # Replace with the actual image tag (nasi101/tetris,nasi101/tetrisv2)
+  #         ports:
+  #           - containerPort: 8000 # Replace with the port your Tetris game listens on
