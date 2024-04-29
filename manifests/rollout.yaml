@@ -21,13 +21,13 @@ spec:
   selector:
     matchLabels:
       app: tetris
-  # template:
-  #   metadata:
-  #     labels:
-  #       app: tetris
-  #   spec:
-  #     containers:
-  #       - name: tetris
-  #         image: rabbit0604/app # Replace with the actual image tag (nasi101/tetris,nasi101/tetrisv2)
-  #         ports:
-  #           - containerPort: 8000 # Replace with the port your Tetris game listens on
+  template:
+    metadata:
+      labels:
+        app: tetris
+    spec:
+      containers:
+        - name: tetris
+          image: rabbit0604/app # Replace with the actual image tag (nasi101/tetris,nasi101/tetrisv2)
+          ports:
+            - containerPort: 8000 # Replace with the port your Tetris game listens on
