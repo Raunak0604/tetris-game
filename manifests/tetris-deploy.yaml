@@ -1,21 +1,21 @@
-# tetris-deployment.yaml
+# # tetris-deployment.yaml
 
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: tetris-deployment
-spec:
-  replicas: 6 # You can adjust the number of replicas as needed
-  selector:
-    matchLabels:
-      app: tetris
-  template:
-    metadata:
-      labels:
-        app: tetris
-    spec:
-      containers:
-        - name: tetris
-          image: rabbit0604/app # Replace with the actual image tag (nasi101/tetris,nasi101/tetrisv2)
-          ports:
-            - containerPort: 8000 # Replace with the port your Tetris game listens on
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: tetris-deployment
+# spec:
+#   replicas: 6 # You can adjust the number of replicas as needed
+#   selector:
+#     matchLabels:
+#       app: tetris
+#   template:
+#     metadata:
+#       labels:
+#         app: tetris
+#     spec:
+#       containers:
+#         - name: tetris
+#           image: rabbit0604/app # Replace with the actual image tag (nasi101/tetris,nasi101/tetrisv2)
+#           ports:
+#             - containerPort: 8000 # Replace with the port your Tetris game listens on
