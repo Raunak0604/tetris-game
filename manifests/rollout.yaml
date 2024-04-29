@@ -5,7 +5,7 @@ kind: Rollout
 metadata:
   name: tetris-rollout
 spec:
-  # replicas: 6 # You can adjust the number of replicas as needed
+  replicas: 6 # You can adjust the number of replicas as needed
   strategy:
     canary:
       steps:
